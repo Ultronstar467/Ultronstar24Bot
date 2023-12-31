@@ -1,14 +1,14 @@
 {
     "name": "Video Convertor 24",
     "description": "A stable and Fast telegram video convertor bot which can compress, convert(video into audio and other video formats), rename and trim.",
-    "logo": "",
+    "logo": "https://graph.org/file/eb5bcc92e2e2791f6b5c3.jpg",
     "keywords": [
         "Best",
         "telegram",
         "compressor",
         "bot"
     ],
-    "repository": "https://github.com/Aluval/VIDEOCONVERTER24BOT-",
+    "repository": "https://github.com/Aluval/VIDEOCONVERTER24BOT",
     "website": "",
     "success_url": "https://t.me/Sunrises24BotUpdates",
     "env": {

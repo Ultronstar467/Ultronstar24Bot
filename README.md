@@ -11,7 +11,7 @@ You can deploy this bot Heroku ⚡.
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/Aluval/VIDEOCONVERTER24BOT-">
+<a href="https://heroku.com/deploy?template=https://github.com/Aluval/VIDEOCONVERTER24BOT">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy To Heroku">
 </a>
 </p>

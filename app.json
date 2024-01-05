@@ -14,23 +14,23 @@
     "env": {
         "API_HASH": {
             "description": "Your API HASH from my.telegram.org",
-            "value": ""
+            "value": "191bf5ae7a6c39771e7b13cf4ffd1279"
         },
         "API_ID": {
             "description": "Your API ID from my.telegram.org",
-            "value": ""
+            "value": "10811400"
         },
         "BOT_TOKEN": {
             "description": "Bot token, get it from @BotFather.",
-            "value": ""
+            "value": "6887430630:AAFYNMuSbtn1Pnul_e9YOEVGLNvyiDd8PPU"
         },
         "AUTH_USERS": {
             "description": "Bot owner's UserID.",
-            "value": ""
+            "value": "6469754522"
         },
         "BOT_UN": {
             "description": "Your bot username here. Do not use '@'.",
-            "value": ""
+            "value": "VIDEOCONVERTER24BOT"
         },
         "HEROKU_API": {
             "description": "Your heroku app name(optional, add only if you want to restart directly from tg.",

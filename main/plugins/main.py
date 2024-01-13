@@ -20,12 +20,12 @@ async def compin(event):
             if 'video' in video:
                 await event.reply("📽",
                             buttons=[
-                                [Button.inline("ENCODE", data="encode"),
-                                 Button.inline("COMPRESS", data="compress")],
-                                [Button.inline("CONVERT", data="convert"),
-                                 Button.inline("RENAME", data="rename")],
-                                [Button.inline("SSHOTS", data="sshots"),
-                                 Button.inline("TRIM", data="trim")]
+                                [Button.inline("ENCODE💻", data="encode"),
+                                 Button.inline("COMPRESS🗜️", data="compress")],
+                                [Button.inline("CONVERT🔁", data="convert"),
+                                 Button.inline("RENAME📝", data="rename")],
+                                [Button.inline("SSHOTS📸", data="sshots"),
+                                 Button.inline("TRIM✂️", data="trim")]
                             ])
             elif 'png' in video:
                 return
@@ -48,9 +48,10 @@ async def _encode(event):
                          Button.inline("576P", data="576")],
                         [Button.inline("720p", data="720"),
                          Button.inline("1080P", data="1080")],
-                        [Button.inline("x264", data="264"),
-                         Button.inline("x265", data="265")],
-                        [Button.inline("BACK", data="back")]])
+                        [Button.inline("4K", data="2160")],
+                         Button.inline("x264", data="264"),
+                        [Button.inline("x265", data="265"),
+                         Button.inline("BACK", data="back")]])
                          
 @Drone.on(events.callbackquery.CallbackQuery(data="compress"))
 async def _compress(event):
@@ -77,12 +78,12 @@ async def convert(event):
 @Drone.on(events.callbackquery.CallbackQuery(data="back"))
 async def back(event):
     await event.edit("📽", buttons=[
-                    [Button.inline("ENCODE", data="encode"),
-                     Button.inline("COMPRESS", data="compress")],
-                    [Button.inline("CONVERT", data="convert"),
-                     Button.inline("RENAME", data="rename")],
-                    [Button.inline("SSHOTS", data="sshots"),
-                     Button.inline("TRIM", data="trim")]])
+                    [Button.inline("ENCODE💻", data="encode"),
+                     Button.inline("COMPRESS🗜️", data="compress")],
+                    [Button.inline("CONVERT🔁", data="convert"),
+                     Button.inline("RENAME📝", data="rename")],
+                    [Button.inline("SSHOTS📸", data="sshots"),
+                     Button.inline("TRIM✂️", data="trim")]])
     
 #-----------------------------------------------------------------------------------------
 
@@ -301,6 +302,18 @@ async def _1080(event):
     else:
         await event.edit("Another process in progress!")
         
+@Drone.on(events.callbackquery.CallbackQuery(data="2160"))
+async def _2160(event):
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("encodemedia"):
+        await event.delete()
+        os.mkdir("encodemedia")      
+        await encode(event, msg, scale=2160)
+        os.rmdir("encodemedia")
+    else:
+        await event.edit("Another process in progress!")
+
 @Drone.on(events.callbackquery.CallbackQuery(data="sshots"))
 async def ss_(event):
     button = await event.get_message()

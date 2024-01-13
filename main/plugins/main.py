@@ -48,8 +48,8 @@ async def _encode(event):
                          Button.inline("576P", data="576")],
                         [Button.inline("720p", data="720"),
                          Button.inline("1080P", data="1080")],
-                        [Button.inline("4K", data="2160")],
-                         Button.inline("x264", data="264"),
+                        [Button.inline("4K", data="2160"),
+                         Button.inline("x264", data="264")],
                         [Button.inline("x265", data="265"),
                          Button.inline("BACK", data="back")]])
                          

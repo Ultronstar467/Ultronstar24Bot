@@ -237,7 +237,7 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-preset ultrafast -c:v libx264 -pix_fmt yuv420p -s 426x240 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
+        cmd = '-preset veryfast -c:v libx264 -pix_fmt yuv420p -s 426x240 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -250,7 +250,7 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-preset ultrafast -c:v libx264 -pix_fmt yuv420p -s 640x360 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
+        cmd = '-preset veryfast -c:v libx264 -pix_fmt yuv420p -s 640x360 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
         await encode(event, msg, cmd)        
         os.rmdir("encodemedia")
     else:
@@ -263,7 +263,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-preset ultrafast -c:v libx264 -pix_fmt yuv420p -s 854x480 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
+        cmd = '-preset veryfast -c:v libx264 -pix_fmt yuv420p -s 854x480 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -276,7 +276,7 @@ async def _576(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-preset ultrafast -c:v libx264 -pix_fmt yuv420p -s 1024x576 -crf 28 -c:a libopus -ac 2 -ab 192k -c:s copy'
+        cmd = '-preset veryfast -c:v libx264 -pix_fmt yuv420p -s 1024x576 -crf 28 -c:a libopus -ac 2 -ab 192k -c:s copy'
         await encode(event, msg, cmd)       
         os.rmdir("encodemedia")
     else:
@@ -289,7 +289,7 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-preset ultrafast -c:v libx264 -pix_fmt yuv420p -s 1280x720 -crf 28 -c:a libopus -ac 2 -ab 192k -c:s copy'
+        cmd = '-preset veryfast -c:v libx264 -pix_fmt yuv420p -s 1280x720 -crf 28 -c:a libopus -ac 2 -ab 192k -c:s copy'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -302,7 +302,7 @@ async def _1080(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia") 
-        cmd = '-preset ultrafast -c:v libx264 -pix_fmt yuv420p -s 1920x1080 -crf 28 -c:a libopus -ac 2 -ab 192k -c:s copy'
+        cmd = '-preset veryfast -c:v libx264 -pix_fmt yuv420p -s 1920x1080 -crf 28 -c:a libopus -ac 2 -ab 192k -c:s copy'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -315,7 +315,7 @@ async def _2160(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia") 
-        cmd = '-preset ultrafast -c:v libx264 -pix_fmt yuv420p -s 3840x2160 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
+        cmd = '-preset veryfast -c:v libx264 -pix_fmt yuv420p -s 3840x2160 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:

@@ -10,6 +10,9 @@ from main.plugins.trimmer import trim
 from main.plugins.convertor import mp3, flac, wav, mp4, mkv, webm, file, video
 from main.plugins.encoder import encode
 from main.plugins.ssgen import screenshot
+from ethon.telefunc import fast_download
+from ethon.pyfunc import video_metadata
+
 
 @Drone.on(events.NewMessage(incoming=True,func=lambda e: e.is_private))
 async def compin(event):

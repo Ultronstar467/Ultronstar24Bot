@@ -20,12 +20,12 @@ async def compin(event):
             if 'video' in video:
                 await event.reply("📽",
                             buttons=[
-                                [Button.inline("ENCODE", data="encode"),
-                                 Button.inline("COMPRESS", data="compress")],
-                                [Button.inline("CONVERT", data="convert"),
-                                 Button.inline("RENAME", data="rename")],
-                                [Button.inline("SSHOTS", data="sshots"),
-                                 Button.inline("TRIM", data="trim")]
+                                [Button.inline("ENCODE💻", data="encode"),
+                                 Button.inline("COMPRESS🗜️", data="compress")],
+                                [Button.inline("CONVERT🔁", data="convert"),
+                                 Button.inline("RENAME📝", data="rename")],
+                                [Button.inline("SSHOTS📸", data="sshots"),
+                                 Button.inline("TRIM✂️", data="trim")]
                             ])
             elif 'png' in video:
                 return
@@ -45,19 +45,20 @@ async def _encode(event):
                         [Button.inline("240p", data="240"),
                          Button.inline("360p", data="360")],
                         [Button.inline("480p", data="480"),
-                         Button.inline("540P", data="540")],
+                         Button.inline("576P", data="576")],
                         [Button.inline("720p", data="720"),
                          Button.inline("1080P", data="1080")],
-                        [Button.inline("x264", data="264"),
-                         Button.inline("x265", data="265")],
-                        [Button.inline("BACK", data="back")]])
-                         
+                        [Button.inline("4K", data="2160"),
+                         Button.inline("x264", data="264")],
+                        [Button.inline("x265", data="265"),
+                        Button.inline("BACK", data="back")]])
+
 @Drone.on(events.callbackquery.CallbackQuery(data="compress"))
 async def _compress(event):
     await event.edit("**🗜COMPRESS**",
                     buttons=[
-                        [Button.inline("HEVC COMPRESS", data="hcomp"),
-                         Button.inline("FAST COMPRESS", data="fcomp")],
+                        [Button.inline("HEVC COMPRESS🗜️", data="hcomp"),
+                         Button.inline("FAST COMPRESS🗜️", data="fcomp")],
                         [Button.inline("BACK", data="back")]])
                                           
 @Drone.on(events.callbackquery.CallbackQuery(data="convert"))
@@ -77,12 +78,12 @@ async def convert(event):
 @Drone.on(events.callbackquery.CallbackQuery(data="back"))
 async def back(event):
     await event.edit("📽", buttons=[
-                    [Button.inline("ENCODE", data="encode"),
-                     Button.inline("COMPRESS", data="compress")],
-                    [Button.inline("CONVERT", data="convert"),
-                     Button.inline("RENAME", data="rename")],
-                    [Button.inline("SSHOTS", data="sshots"),
-                     Button.inline("TRIM", data="trim")]])
+                    [Button.inline("ENCODE💻", data="encode"),
+                     Button.inline("COMPRESS🗜️", data="compress")],
+                    [Button.inline("CONVERT🔁", data="convert"),
+                     Button.inline("RENAME📝", data="rename")],
+                    [Button.inline("SSHOTS📸", data="sshots"),
+                     Button.inline("TRIM✂️", data="trim")]])
     
 #-----------------------------------------------------------------------------------------
 
@@ -236,7 +237,8 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        await encode(event, msg, 240)
+        cmd = '-c:v libx265 -pix_fmt yuv420p -preset veryfast -s 426x240 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -248,7 +250,8 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        await encode(event, msg, 360)
+        cmd = '-c:v libx265 -pix_fmt yuv420p -preset veryfast -s 640x360 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
+        await encode(event, msg, cmd)        
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -260,19 +263,21 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        await encode(event, msg, 480)
+        cmd = '-c:v libx265 -pix_fmt yuv420p -preset veryfast -s 854x480 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
         
-@Drone.on(events.callbackquery.CallbackQuery(data="540"))
-async def _540(event):
+@Drone.on(events.callbackquery.CallbackQuery(data="576"))
+async def _576(event):
     button = await event.get_message()
     msg = await button.get_reply_message()  
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        await encode(event, msg, 540)
+        cmd = '-c:v libx265 -pix_fmt yuv420p -preset veryfast -s 1024x576 -crf 28 -c:a libopus -ac 2 -ab 192k -c:s copy'
+        await encode(event, msg, cmd)       
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -284,7 +289,8 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        await encode(event, msg, 720)
+        cmd = '-c:v libx265 -pix_fmt yuv420p -preset veryfast -s 1280x720 -crf 28 -c:a libopus -ac 2 -ab 192k -c:s copy'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -295,8 +301,22 @@ async def _1080(event):
     msg = await button.get_reply_message()  
     if not os.path.isdir("encodemedia"):
         await event.delete()
-        os.mkdir("encodemedia")      
-        await encode(event, msg, 1080)
+        os.mkdir("encodemedia") 
+        cmd = '-c:v libx265 -pix_fmt yuv420p -preset veryfast -s 1920x1080 -crf 28 -c:a libopus -ac 2 -ab 192k -c:s copy'
+        await encode(event, msg, cmd)
+        os.rmdir("encodemedia")
+    else:
+        await event.edit("Another process in progress!")
+        
+@Drone.on(events.callbackquery.CallbackQuery(data="2160"))
+async def _2160(event):
+    button = await event.get_message()
+    msg = await button.get_reply_message()  
+    if not os.path.isdir("encodemedia"):
+        await event.delete()
+        os.mkdir("encodemedia") 
+        cmd = '-c:v libx265 -pix_fmt yuv420p -preset veryfast -s 3840x2160 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")

@@ -251,7 +251,7 @@ async def _360(event):
         await event.delete()
         os.mkdir("encodemedia")
         #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 640x360 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=640:360)        
+        await encode(event, msg, scale=360)        
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -264,7 +264,7 @@ async def _480(event):
         await event.delete()
         os.mkdir("encodemedia")
         #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 854x480 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=854:480)
+        await encode(event, msg, scale=480)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -277,7 +277,7 @@ async def _576(event):
         await event.delete()
         os.mkdir("encodemedia")
         #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 1024x576 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=1024:576)       
+        await encode(event, msg, scale=576)       
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -290,7 +290,7 @@ async def _720(event):
         await event.delete()
         os.mkdir("encodemedia")
         #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 1280x720 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=1280:720)
+        await encode(event, msg, scale=720)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -303,7 +303,7 @@ async def _1080(event):
         await event.delete()
         os.mkdir("encodemedia") 
         #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 1920x1080 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=1920:1080)
+        await encode(event, msg, scale=1080)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -316,7 +316,7 @@ async def _2160(event):
         await event.delete()
         os.mkdir("encodemedia") 
         #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 3840x2160 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=3840:2160)
+        await encode(event, msg, scale=2160)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")

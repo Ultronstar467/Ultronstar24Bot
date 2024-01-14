@@ -237,8 +237,8 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-preset ultrafast -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, 240, cmd)
+        240 = '-preset ultrafast -c:a libopus -ac 2 -ab 128k -c:s copy'
+        await encode(event, msg, 240)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -250,8 +250,8 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-preset ultrafast -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, 360, cmd)        
+        360 = '-preset ultrafast -c:a libopus -ac 2 -ab 128k -c:s copy'
+        await encode(event, msg, 360)        
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -263,8 +263,8 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-preset ultrafast -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, 480, cmd)
+        480 = '-preset ultrafast -c:a libopus -ac 2 -ab 128k -c:s copy'
+        await encode(event, msg, 480)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -276,8 +276,8 @@ async def _576(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-preset ultrafast -c:a libopus -ac 2 -ab 192k -c:s copy'
-        await encode(event, msg, 576, cmd)       
+        576 = '-preset ultrafast -c:a libopus -ac 2 -ab 192k -c:s copy'
+        await encode(event, msg, 576)       
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -289,8 +289,8 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = '-preset ultrafast -c:a libopus -ac 2 -ab 192k -c:s copy'
-        await encode(event, msg, 720, cmd)
+        720 = '-preset ultrafast -c:a libopus -ac 2 -ab 192k -c:s copy'
+        await encode(event, msg, 720)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -302,8 +302,8 @@ async def _1080(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia") 
-        cmd = '-preset ultrafast -c:a libopus -ac 2 -ab 192k -c:s copy'
-        await encode(event, msg, 1080, cmd)
+        1080 = '-preset ultrafast -c:a libopus -ac 2 -ab 192k -c:s copy'
+        await encode(event, msg, 1080)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -315,8 +315,8 @@ async def _2160(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia") 
-        cmd = '-preset ultrafast -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, 2160, cmd)
+        2160 = '-preset ultrafast -c:a libopus -ac 2 -ab 128k -c:s copy'
+        await encode(event, msg, 2160)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")

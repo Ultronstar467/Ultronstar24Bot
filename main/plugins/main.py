@@ -1,5 +1,6 @@
 #TG:Sunrises24BotUpdates 
 #@sunrises_24
+#telegram
 
 import os
 from .. import Drone 

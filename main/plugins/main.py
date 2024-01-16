@@ -237,8 +237,8 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 426x240 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=240)
+        cmd = 'ffmpeg -i '''{}''' -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 320x240 -crf 28 -map 0:v -c:a libopus -ac 2 -ab 192k -map 0:a -c:s copy -map 0:s? '''{}''' -y'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -250,8 +250,8 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 640x360 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=360)        
+        cmd = 'ffmpeg -i '''{}''' -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 640x360 -crf 28 -map 0:v -c:a libopus -ac 2 -ab 192k -map 0:a -c:s copy -map 0:s? '''{}''' -y'
+        await encode(event, msg, cmd)        
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -263,21 +263,21 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 854x480 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=480)
+        cmd = 'ffmpeg -i '''{}''' -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 640x480 -crf 28 -map 0:v -c:a libopus -ac 2 -ab 192k -map 0:a -c:s copy -map 0:s? '''{}''' -y'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
         
-@Drone.on(events.callbackquery.CallbackQuery(data="576"))
-async def _576(event):
+@Drone.on(events.callbackquery.CallbackQuery(data="540"))
+async def _540(event):
     button = await event.get_message()
     msg = await button.get_reply_message()  
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 1024x576 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=576)       
+        cmd = 'ffmpeg -i '''{}''' -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 960x540 -crf 28 -map 0:v -c:a libopus -ac 2 -ab 192k -map 0:a -c:s copy -map 0:s? '''{}''' -y'
+        await encode(event, msg, cmd)       
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -289,8 +289,8 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 1280x720 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=720)
+        cmd = 'ffmpeg -i '''{}''' -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 1280x720 -crf 28 -map 0:v -c:a libopus -ac 2 -ab 192k -map 0:a -c:s copy -map 0:s? '''{}''' -y'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -302,8 +302,8 @@ async def _1080(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia") 
-        #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 1920x1080 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=1080)
+        cmd = 'ffmpeg -i '''{}''' -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 1920x1080 -crf 28 -map 0:v -c:a libopus -ac 2 -ab 192k -map 0:a -c:s copy -map 0:s? '''{}''' -y'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -315,8 +315,8 @@ async def _2160(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia") 
-        #cmd = '-vcodec libx264 -pix_fmt yuv420p -preset veryfast -s 3840x2160 -crf 28 -c:a libopus -ac 2 -ab 128k -c:s copy'
-        await encode(event, msg, scale=2160)
+        cmd = 'ffmpeg -i '''{}''' -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 3840x2160 -crf 28 -map 0:v -c:a libopus -ac 2 -ab 192k -map 0:a -c:s copy -map 0:s? '''{}''' -y'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")

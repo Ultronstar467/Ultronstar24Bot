@@ -251,7 +251,7 @@ async def _360(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = 'ffmpeg -i '''{}''' -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 640x360 -crf 28 -map 0:v -c:a libopus -ac 2 -ab 192k -map 0:a -c:s copy -map 0:s? '''{}''' -y'
+        cmd = '-preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 640x360 -crf 28 -map 0:v -c:a libopus -ac 2 -ab 192k -map 0:a -c:s copy -map 0:s?'
         await encode(event, msg, cmd)        
         os.rmdir("encodemedia")
     else:

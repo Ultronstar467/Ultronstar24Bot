@@ -264,7 +264,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = = f'ffmpeg -i """{input}""" -preset -vcodec libx264 -crf 28 -s 640x480 -metadata title="Encoded By SUNRISES HARSHA 24✨" -metadata:s:v title="Harsha24 - 480p - libx264"  -metadata:s:a title="Harsha 24" -map 0:v -c:a opus -b:a 64k -map 0:a -c:s copy -map 0:s? -strict -2 """{output}480p.mkv""" -y'
+        cmd = = f'ffmpeg -i """{input}""" -preset ultrafast -vcodec libx264 -crf 28 -s 640x480 -metadata title="Encoded By SUNRISES HARSHA 24✨" -metadata:s:v title="Harsha24 - 480p - libx264"  -metadata:s:a title="Harsha 24" -map 0:v -c:a opus -b:a 64k -map 0:a -c:s copy -map 0:s? -strict -2 """{output}480p.mkv""" -y'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:

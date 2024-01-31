@@ -239,7 +239,7 @@ async def _240(event):
         await event.delete()
         os.mkdir("encodemedia")
         #cmd = 'ffmpeg -i -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 320x240 -crf 28'
-        await encode(event, msg, scale=320:240)
+        await encode(event, msg, scale=240)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")

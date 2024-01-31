@@ -238,8 +238,8 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        #cmd = 'ffmpeg -i -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 320x240 -crf 28'
-        await encode(event, msg, scale=240)
+        cmd = f'ffmpeg -i -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 320x240 -crf 28'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -252,7 +252,7 @@ async def _360(event):
         await event.delete()
         os.mkdir("encodemedia")
         #cmd = 'ffmpeg -i -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 640x360 -crf 28'
-        await encode(event, msg, scale=640:360)        
+        await encode(event, msg, scale=360)        
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -264,8 +264,8 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        #cmd = f'ffmpeg -i -preset ultrafast -vcodec libx264 -crf 28 -s 640x480 -metadata title="Encoded By SUNRISES HARSHA 24✨" -metadata:s:v title="Harsha24 - 480p - libx264"  -metadata:s:a title="Harsha 24" -map 0:v -c:a opus -b:a 64k -map 0:a -c:s copy -map 0:s? -strict -2 -y'
-        await encode(event, msg, scale=852:480)
+        cmd = f'ffmpeg -i """{input}""" -preset ultrafast -vcodec libx265 -pix_fmt yuv420p10le -crf 28 -s 852x480 -metadata title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨" -metadata:s:v title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨"  -metadata:s:s title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -metadata:s:a title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -map 0:v -c:a opus -b:a 128k -map 0:a -c:s copy -map 0:s? -strict -2 """{output}""" -y'   
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -278,7 +278,7 @@ async def _576(event):
         await event.delete()
         os.mkdir("encodemedia")
         #cmd = 'ffmpeg -i -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 960x540 -crf 28'
-        await encode(event, msg, scale=768:576)       
+        await encode(event, msg, scale=576)       
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -290,8 +290,8 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        #cmd = 'ffmpeg -i -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 1280x720 -crf 28'
-        await encode(event, msg, scale=1280:720)
+        cmd = f'ffmpeg -i """{input}""" -preset ultrafast -vcodec libx265 -pix_fmt yuv420p10le -crf 28 -s 1280x720 -metadata title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨" -metadata:s:v title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨"  -metadata:s:s title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -metadata:s:a title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -map 0:v -c:a opus -b:a 192k -map 0:a -c:s copy -map 0:s? -strict -2 """{output}""" -y'
+        await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -304,7 +304,7 @@ async def _1080(event):
         await event.delete()
         os.mkdir("encodemedia") 
         #cmd = 'ffmpeg -i -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 1920x1080 -crf 28'
-        await encode(event, msg, scale=1920:1080)
+        await encode(event, msg, scale=1080)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")

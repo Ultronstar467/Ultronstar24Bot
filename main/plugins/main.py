@@ -238,8 +238,8 @@ async def _240(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = f'ffmpeg -i -preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 320x240 -crf 28'
-        await encode(event, msg, cmd)
+        #cmd = '-preset ultrafast -c:v libx265 -pix_fmt yuv420p -s 320x240 -crf 28'
+        await encode(event, msg, scale=240)
         os.rmdir("encodemedia")
     else:
         await event.edit("Another process in progress!")
@@ -264,7 +264,7 @@ async def _480(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = f'ffmpeg -i """{input}""" -preset ultrafast -vcodec libx265 -pix_fmt yuv420p10le -crf 28 -s 852x480 -metadata title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨" -metadata:s:v title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨"  -metadata:s:s title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -metadata:s:a title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -map 0:v -c:a opus -b:a 128k -map 0:a -c:s copy -map 0:s? -strict -2 """{output}""" -y'   
+        cmd = '-preset ultrafast -vcodec libx265 -pix_fmt yuv420p10le -crf 28 -s 852x480 -metadata title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨" -metadata:s:v title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨"  -metadata:s:s title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -metadata:s:a title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -map 0:v -c:a opus -b:a 128k -map 0:a -c:s copy -map 0:s? -strict -2'   
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:
@@ -290,7 +290,7 @@ async def _720(event):
     if not os.path.isdir("encodemedia"):
         await event.delete()
         os.mkdir("encodemedia")
-        cmd = f'ffmpeg -i """{input}""" -preset ultrafast -vcodec libx265 -pix_fmt yuv420p10le -crf 28 -s 1280x720 -metadata title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨" -metadata:s:v title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨"  -metadata:s:s title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -metadata:s:a title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -map 0:v -c:a opus -b:a 192k -map 0:a -c:s copy -map 0:s? -strict -2 """{output}""" -y'
+        cmd = '-preset ultrafast -vcodec libx265 -pix_fmt yuv420p10le -crf 28 -s 1280x720 -metadata title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨" -metadata:s:v title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨"  -metadata:s:s title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -metadata:s:a title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -map 0:v -c:a opus -b:a 192k -map 0:a -c:s copy -map 0:s? -strict -2'
         await encode(event, msg, cmd)
         os.rmdir("encodemedia")
     else:

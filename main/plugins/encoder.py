@@ -52,7 +52,7 @@ async def encode(event, msg, scale):
     os.rename(n, name)
     FT = time.time()
     progress = f"progress-{FT}.txt"
-    cmd = f'ffmpeg -hide_banner -loglevel quiet -progress {progress} -i """{name}""" -filter:v scale={str(scale)}:-1 -c:a copy """{out}""" -y'
+    cmd = f'ffmpeg -hide_banner -loglevel quiet -progress {progress} -i """{name}""" -filter:v scale={str(scale)}:-1 -metadata title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨" -metadata:s:v title="𝐄𝐍𝐂𝐎𝐃𝐄𝐃 𝐁𝐘 𝐒𝐔𝐍𝐑𝐈𝐒𝐄𝐒 𝐇𝐀𝐑𝐒𝐇𝐀 ✨ - {resolutio} - {vcodec}"  -metadata:s:s title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -metadata:s:a title="𝗛𝗔𝗥𝗦𝗛𝗔 𝟮𝟰 ~ 𝐒𝐮𝐧𝐫𝐢𝐬𝐞𝐬𝟐𝟒𝐑𝐢𝐩𝐬" -map 0:v -c:a opus -b:a 192k -map 0:a -c:s copy  """{out}""" -y'
     try:
         await ffmpeg_progress(cmd, name, progress, FT, edit, '**ENCODING:**')
     except Exception as e:

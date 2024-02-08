@@ -22,7 +22,7 @@
         },
         "BOT_TOKEN": {
             "description": "Bot token, get it from @BotFather.",
-            "value": "6887430630:AAFdKrqli3I-4hc1w1XGE6Yd0bV_PG6AG-k"
+            "value": "6474132956:AAF8f7X62DIdgwBbruz0vHG7zMZ5UlwInRk"
         },
         "AUTH_USERS": {
             "description": "Bot owner's UserID.",
@@ -30,16 +30,16 @@
         },
         "BOT_UN": {
             "description": "Your bot username here. Do not use '@'.",
-            "value": "VIDEOCONVERTER24BOT"
+            "value": "PrivateEncoder24Bot"
         },
         "HEROKU_API": {
             "description": "Your heroku app name(optional, add only if you want to restart directly from tg.",
-            "value": "7b47e8fc-fc54-4344-b15a-b3c7a119f763",
+            "value": "f2ca6515-71d6-44e3-aba6-df7166ad3cca",
             "required": false
         },
         "HEROKU_APP_NAME": {
             "description": "Your heroku api, you can get it from heroku account settings(optional, add only if you want to restart directly from tg.",
-            "value": "videpconverter24bot",
+            "value": "vcbot24",
             "required": false
         }
     },

@@ -16,7 +16,7 @@ from LOCAL.utils import ffmpeg_progress
 from telethon.errors.rpcerrorlist import MessageNotModifiedError
 from telethon.tl.types import DocumentAttributeVideo
 
-async def encode(event, msg, scale):
+async def encode(event, msg, ffmpeg_cmd):
     Drone = event.client
     edit = await Drone.send_message(event.chat_id, "Trying to process.", reply_to=msg.id)
     new_name = "out_" + dt.now().isoformat("_", "seconds")
@@ -52,7 +52,7 @@ async def encode(event, msg, scale):
     os.rename(n, name)
     FT = time.time()
     progress = f"progress-{FT}.txt"
-    cmd = f'ffmpeg -hide_banner -loglevel quiet -progress {progress} -i """{name}""" -filter:v scale={str(scale)}:-1 -c:a libopus -b:a 192k copy """{out}""" -y'
+    cmd = f'ffmpeg -hide_banner -loglevel quiet -progress {progress} -i """{name}""" {str(ffmpeg_cmd)} """{out}""" -y'
     try:
         await ffmpeg_progress(cmd, name, progress, FT, edit, '**ENCODING:**')
     except Exception as e:
